@@ -1,4 +1,4 @@
-package org.zk;
+package org.zk.dubbo.provider;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

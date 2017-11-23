@@ -13,7 +13,10 @@ public class Consumer {
         context.start();
 
         DemoService demoService = (DemoService) context.getBean("demoService");
-        String hello = demoService.sayHello("tom");
-        System.out.println(hello);
+//        System.out.println(JSON.toJSONString(demoService));
+        System.out.println("------------------ 1 ---------------");
+        System.out.println( demoService.sayHello("zhangkang"));
+        System.out.println("------------------ 1 end ---------------");
+//        System.out.println(hello);
     }
 }
