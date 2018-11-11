@@ -13,7 +13,7 @@ public class DemoServiceImpl implements DemoService {
     private static Logger logger = LoggerFactory.getLogger(DemoServiceImpl.class);
 
     public String sayHello(String name) {
-        logger.info("sayHello invoked");
+        logger.info("=============== sayHello invoked ===========");
         return "hello, " + name;
     }
 
