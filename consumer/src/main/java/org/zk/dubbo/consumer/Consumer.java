@@ -14,9 +14,9 @@ public class Consumer {
 
         DemoService demoService = (DemoService) context.getBean("demoService");
 //        System.out.println(JSON.toJSONString(demoService));
-        for (int i=0; i< 5; i++) {
+//        for (int i=0; i< 5; i++) {
             System.out.println(demoService.sayHello("zhangkang"));
-        }
+//        }
 //        System.out.println(hello);
     }
 }
