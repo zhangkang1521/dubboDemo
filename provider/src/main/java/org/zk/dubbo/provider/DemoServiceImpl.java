@@ -14,11 +14,7 @@ public class DemoServiceImpl implements DemoService {
 
     public String sayHello(String name) {
         logger.info("=============== sayHello invoked ===========");
-        return "hello, " + name;
+        return "hello, local," + name;
     }
 
-    public String sayWorld(String name) {
-        logger.info("sayWorld invoked");
-        return "world, " + name;
-    }
 }
