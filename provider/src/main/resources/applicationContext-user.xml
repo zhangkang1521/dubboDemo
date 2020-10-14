@@ -12,7 +12,7 @@
     <!-- wireshark抓包: ip.addr eq 192.168.226.129 and tcp.port eq 20880 -->
 
     <!-- 提供方应用信息，用于计算依赖关系 -->
-    <dubbo:application name="dubbo-b">
+    <dubbo:application name="dubbo-c">
         <dubbo:parameter key="qos.enable" value="false"/>
     </dubbo:application>
 
@@ -23,16 +23,12 @@
     <dubbo:registry address="zookeeper://localhost:2181" />
 
     <!-- 用dubbo协议在20880端口暴露服务 -->
-    <dubbo:protocol name="dubbo" port="20880" />
+    <dubbo:protocol name="dubbo" port="20881" />
 
     <!-- 具体的实现bean -->
-    <bean id="demoService" class="org.zk.dubbo.provider.DemoServiceImpl" >
-        <property name="userService" ref="userService"/>
-    </bean>
+    <bean id="userService" class="org.zk.dubbo.provider.UserServiceImpl" />
 
     <!-- 声明需要暴露的服务接口 -->
-    <dubbo:service interface="org.zk.dubbo.interfaces.DemoService" ref="demoService" />
-
-    <dubbo:reference id="userService" interface="org.zk.dubbo.interfaces.UserService" />
+    <dubbo:service interface="org.zk.dubbo.interfaces.UserService" ref="userService" />
 
 </beans>
