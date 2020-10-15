@@ -25,14 +25,15 @@
     <!-- 用dubbo协议在20880端口暴露服务 -->
     <dubbo:protocol name="dubbo" port="20880" />
 
+
     <!-- 具体的实现bean -->
     <bean id="demoService" class="org.zk.dubbo.provider.DemoServiceImpl" >
-        <property name="userService" ref="userService"/>
+        <!--<property name="userService" ref="userService"/>-->
     </bean>
 
     <!-- 声明需要暴露的服务接口 -->
     <dubbo:service interface="org.zk.dubbo.interfaces.DemoService" ref="demoService" />
 
-    <dubbo:reference id="userService" interface="org.zk.dubbo.interfaces.UserService" />
+    <!--<dubbo:reference id="userService" interface="org.zk.dubbo.interfaces.UserService" check="false"/>-->
 
 </beans>

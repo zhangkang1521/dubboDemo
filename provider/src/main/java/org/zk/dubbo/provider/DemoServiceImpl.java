@@ -23,7 +23,7 @@ public class DemoServiceImpl implements DemoService {
         RpcContext context = RpcContext.getContext();
         String consumerApplicationName = (String) context.get(Constants.APPLICATION_KEY);
         System.out.println(consumerApplicationName);
-        userService.save();
+//        userService.save();
         return "hello, local," + name;
     }
 
