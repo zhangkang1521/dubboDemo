@@ -12,7 +12,7 @@
     <!-- wireshark抓包: ip.addr eq 192.168.226.129 and tcp.port eq 20880 -->
 
     <!-- 提供方应用信息，用于计算依赖关系 -->
-    <dubbo:application name="kang-provider"/>
+    <dubbo:application name="dubbo-b"/>
 
     <!-- 使用multicast广播注册中心暴露服务地址
  	<dubbo:registry address="multicast://224.5.6.7:1234" />-->
@@ -27,6 +27,6 @@
     <bean id="demoService" class="org.zk.dubbo.provider.DemoServiceImpl" />
 
     <!-- 声明需要暴露的服务接口 -->
-    <dubbo:service interface="org.zk.dubbo.interfaces.DemoService" ref="demoService" />
+    <dubbo:service interface="org.zk.dubbo.interfaces.DemoService" ref="demoService" filter="-dubboCatCrossFilter"/>
 
 </beans>
