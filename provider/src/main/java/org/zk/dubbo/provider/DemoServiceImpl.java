@@ -14,9 +14,11 @@ public class DemoServiceImpl implements DemoService {
     private static Logger logger = LoggerFactory.getLogger(DemoServiceImpl.class);
 
     public String sayHello(String name) {
-        RpcContext rpcContext  = RpcContext.getContext();
-        System.out.println(rpcContext.getAttachment("application"));
-        logger.info("=============== sayHello invoked ===========");
+        try {
+            Thread.sleep(800);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return "hello, local," + name;
     }
 
