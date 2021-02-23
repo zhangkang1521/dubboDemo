@@ -17,9 +17,30 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.zk.dubbo</groupId>
+      <groupId>org.zk</groupId>
       <artifactId>commons</artifactId>
-      <version>1.0-SNAPSHOT</version>
+      <version>1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.lvtour</groupId>
+      <artifactId>lvtour-invoice-api</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>com.lvtour</groupId>
+      <artifactId>lvtour_lvmm_product_api</artifactId>
+      <version>0.0.15-SNAPSHOT</version>
+      <exclusions>
+        <exclusion>
+          <groupId>*</groupId>
+          <artifactId>*</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
     </dependency>
   </dependencies>
 

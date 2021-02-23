@@ -7,15 +7,15 @@
         http://code.alibabatech.com/schema/dubbo/dubbo.xsd
         ">
 
-    <!-- 消费方应用名，用于计算依赖关系，不是匹配条件，不要与提供方一样 -->
     <dubbo:application name="dubbo-a" />
 
-    <!-- 使用zookeeper注册中心暴露服务地址 -->
-    <!-- <dubbo:registry address="multicast://224.5.6.7:1234" /> -->
-    <dubbo:registry address="zookeeper://localhost:2181" />
+    <dubbo:registry address="zookeeper://10.200.4.74:2181" />
 
-    <!-- 生成远程服务代理，可以像使用本地bean一样使用demoService -->
-    <dubbo:reference id="demoService"
-                     interface="org.zk.dubbo.interfaces.DemoService" check="false" timeout="300000"/>
+    <dubbo:consumer check="false" timeout="300000" retries="0"/>
+
+    <dubbo:reference id="invoiceRemoteService" interface="com.tims.invoice.api.IInvoiceRemoteService"/>
+    <dubbo:reference id="orderInvoiceInfoService" interface="com.com.tims.lvmama.product.service.OrderInvoiceInfoService"/>
+
+
 
 </beans>
