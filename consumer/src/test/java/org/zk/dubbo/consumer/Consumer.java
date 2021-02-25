@@ -96,5 +96,11 @@ public class Consumer {
 		System.out.println(result);
 	}
 
+	@Test
+	public void refund() {
+		Result result = invoiceRemoteService.orderRefundAutoDiscard(21100000780L);
+		System.out.println(result);
+	}
+
 
 }
